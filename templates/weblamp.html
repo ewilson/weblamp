@@ -1,0 +1,13 @@
+$def with (switch)
+<h1>Lamp is $switch.light.upper()</h1>
+    <form action='/weblamp' method='POST'>
+        ON: <input type='radio' name='light' value='on' 
+        $if switch.light == 'on': checked='true'
+        />
+        OFF: <input type='radio' name='light' value='off' 
+        $if switch.light == 'off': checked='true'
+        />
+    <br/>
+    <input type='submit'/>
+</form>
+
