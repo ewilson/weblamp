@@ -1,4 +1,5 @@
 import web
+import flash
 
 urls = (
     '/weblamp', 'index'
@@ -10,12 +11,14 @@ render = web.template.render('templates/', base='layout')
 
 class index:
     def GET(self):
-        switch = web.input(light='off')
+        switch = web.input()
+        switch.light = 'on' if flash.read() else 'off'
         print switch.light
         return render.weblamp(switch = switch)
     
     def POST(self):
-        switch = web.input(light='off')
+        switch = web.input()
+        flash.switch(switch.light == 'on')
         print switch.light
         return render.weblamp(switch = switch)
 
