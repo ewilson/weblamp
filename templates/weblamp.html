@@ -3,13 +3,12 @@ $def with (switch)
     
     <img src="${'/static/LightBulb' + switch.light.upper() + '.jpg'}"/>
     <form action='/weblamp' method='POST'>
-        ON: <input type='radio' name='light' value='on' 
+        <span>On:</span> <input type='radio' name='light' value='on' 
         $if switch.light == 'on': checked='true'
-        />
-        OFF: <input type='radio' name='light' value='off' 
+        /><br/>
+        <span>Off:</span> <input type='radio' name='light' value='off' 
         $if switch.light == 'off': checked='true'
-        />
-    <br/>
+        /><br/>
     <input type='submit'/>
 </form>
 
