@@ -1,7 +1,7 @@
 $def with (switch)
 <h1>Lamp is $switch.light.upper()</h1>
     
-    <img src="${'/static/LightBulb' + switch.light.upper() + '.jpg'}"
+    <img src="${'/static/LightBulb' + switch.light.upper() + '.jpg'}"/>
     <form action='/weblamp' method='POST'>
         ON: <input type='radio' name='light' value='on' 
         $if switch.light == 'on': checked='true'

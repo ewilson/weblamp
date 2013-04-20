@@ -16,9 +16,7 @@ class index:
         return render.weblamp(switch = switch)
     
     def POST(self):
-        print 'hello'
         switch = web.input()
-        print switch
         flash.switch(switch.light == 'on')
         return render.weblamp(switch = switch)
 
